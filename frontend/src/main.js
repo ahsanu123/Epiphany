@@ -1,13 +1,12 @@
 import { keymap } from "prosemirror-keymap"
-import { Transform, StepMap } from "prosemirror-transform"
-import { EditorState, Plugin, Selection, NodeSelection } from "prosemirror-state"
-import { EditorView, Decoration, DecorationSet } from "prosemirror-view"
-import { Schema, DOMParser, Slice } from "prosemirror-model"
+import { EditorState, Selection, NodeSelection } from "prosemirror-state"
+import { EditorView } from "prosemirror-view"
+import { DOMParser } from "prosemirror-model"
 import 'prosemirror-view/style/prosemirror.css'
 import 'prosemirror-menu/style/menu.css'
 import 'prosemirror-gapcursor/style/gapcursor.css'
 import './style.css'
-import { baseKeymap, setBlockType } from "prosemirror-commands"
+import { baseKeymap } from "prosemirror-commands"
 import TagsView from "./tags"
 import GalleryView from "./gallery"
 import EquationView from "./equation"
@@ -18,7 +17,7 @@ import InlineEquationView from "./inline_equation"
 import EquationRefView from "./equation_ref"
 import VideoView from "./video"
 import TwitterView from "./twitter"
-import { undo, redo, history } from "prosemirror-history"
+import { history } from "prosemirror-history"
 import { buildKeymap } from "./keymap"
 import { dropCursor } from "prosemirror-dropcursor"
 import CodeBlockView from "./code"
@@ -632,7 +631,6 @@ let resizeBarOnMouseUp = function (event) {
 
     document.getElementById('fold-menu-button').innerHTML = '<i class="icon icon-right-open">&#x31;</i>';
     document.getElementById('fold-menu-button').style.transition = 'width 0.5s';
-    
 
     menuFolded = true;
     document.getElementById('editor-top-padding').style.display = 'inline-block';
@@ -659,8 +657,5 @@ resizeBar.onmousedown = (e) => {
   document.getElementById('sidebar-container').style.display = 'flex';
   document.getElementById('sidebar-container').style.transition = null;
   document.getElementById('fold-menu-button').style.transition = null;
-
-
-
 }
 

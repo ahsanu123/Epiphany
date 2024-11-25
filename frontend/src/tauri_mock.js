@@ -29,34 +29,34 @@ let content_table_sample = null;
 let sample_djot = null;
 
 async function invoke(cmd, payload) {
-    switch (cmd) {
-      case 'fetch_tweet':
-        if (!tweet_sample){
-          tweet_sample = await import('./dummy/tweet_sample.json');
-        }
-        return tweet_sample.default;
-      case 'load_config':
-        if (!content_table_sample){
-          content_table_sample = await import('./dummy/content_table_sample.json');
-        }
-        return content_table_sample.default;
-      case 'first_time_setup':
-        if (!content_table_sample){
-          content_table_sample = await import('./dummy/content_table_sample.json');
-        }
-        return content_table_sample.default;
-      case 'load_note':
-        if (!sample_djot){
-          sample_djot = await import('./dummy/welcome.djot');
-        }
-        return sample_djot.default;
-        case 'save_file':
-          return payload.currentFilename;
-          
-      default:
-        console.error("unimplemented ", cmd);
-        break;
-    }
+  switch (cmd) {
+    case 'fetch_tweet':
+      if (!tweet_sample) {
+        tweet_sample = await import('./dummy/tweet_sample.json');
+      }
+      return tweet_sample.default;
+    case 'load_config':
+      if (!content_table_sample) {
+        content_table_sample = await import('./dummy/content_table_sample.json');
+      }
+      return content_table_sample.default;
+    case 'first_time_setup':
+      if (!content_table_sample) {
+        content_table_sample = await import('./dummy/content_table_sample.json');
+      }
+      return content_table_sample.default;
+    case 'load_note':
+      if (!sample_djot) {
+        sample_djot = await import('./dummy/welcome.djot');
+      }
+      return sample_djot.default;
+    case 'save_file':
+      return payload.currentFilename;
+
+    default:
+      console.error("unimplemented ", cmd);
+      break;
+  }
 }
 
 async function tauri_invoke(cmd, payload) {
@@ -90,4 +90,4 @@ async function tauri_convertFileSrc(file) {
   }
 }
 
-export { tauri_invoke, tauri_dialog,tauri_convertFileSrc };
+export { tauri_invoke, tauri_dialog, tauri_convertFileSrc };

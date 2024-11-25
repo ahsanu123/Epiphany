@@ -1,39 +1,37 @@
-import textSchema from "./textschema";
-import { Transform, StepMap } from "prosemirror-transform"
 
 export default class EquationRefView {
-    constructor(node, view, getPos, equationManager) {
-        this.node = node
-        this.outerView = view
-        this.getPos = getPos
-       
-        this.dom = document.createElement("span");
-        this.dom.className = "limpid-equation-ref";
-        let key = this.node.attrs.id;
-        this.dom.setAttribute('data-equation-key', key);
+  constructor(node, view, getPos, equationManager) {
+    this.node = node
+    this.outerView = view
+    this.getPos = getPos
 
-        this.dom.innerText = "Eq. " + equationManager.fetchCountByKey(key);
-    }
+    this.dom = document.createElement("span");
+    this.dom.className = "limpid-equation-ref";
+    let key = this.node.attrs.id;
+    this.dom.setAttribute('data-equation-key', key);
 
-    update(node) {
-        if (node.type != this.node.type) return false
-        this.node = node;
-        return true;
-    }
+    this.dom.innerText = "Eq. " + equationManager.fetchCountByKey(key);
+  }
 
-    selectNode() {
-        this.dom.classList.add("ProseMirror-selectednode")
-    }
+  update(node) {
+    if (node.type != this.node.type) return false
+    this.node = node;
+    return true;
+  }
 
-    deselectNode() {
-        this.dom.classList.remove("ProseMirror-selectednode")
-    }
+  selectNode() {
+    this.dom.classList.add("ProseMirror-selectednode")
+  }
 
-    stopEvent() {
-        return true;
-    }
+  deselectNode() {
+    this.dom.classList.remove("ProseMirror-selectednode")
+  }
 
-    destroy() {
-        console.log('equation destroyed ')
-    }
+  stopEvent() {
+    return true;
+  }
+
+  destroy() {
+    console.log('equation destroyed ')
+  }
 }

@@ -4,9 +4,9 @@
   font-family: 'fontello';
   src: url('icon_font/fontello.eot');
   src: url('icon_font/fontello.eot') format('embedded-opentype'),
-       url('icon_font/fontello.woff') format('woff'),
-       url('icon_font/icons/fontello.ttf') format('truetype'),
-       url('icon_font/icons/fontello.svg') format('svg');
+    url('icon_font/fontello.woff') format('woff'),
+    url('icon_font/icons/fontello.ttf') format('truetype'),
+    url('icon_font/icons/fontello.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,32 +24,32 @@
   font-style: normal;
   font-weight: normal;
   speak: never;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
- 
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* You can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
@@ -307,12 +307,12 @@ input:focus {
 
 .ProseMirror h3 {
   font-family: 'Pragati Narrow', sans-serif;
-  
+
 }
 
 .ProseMirror h4 {
   font-family: 'Pragati Narrow', sans-serif;
-  
+
 }
 
 .ProseMirror p {
@@ -517,7 +517,7 @@ input:focus {
   flex-direction: row;
   flex-grow: 1;
   padding: 4px;
-  
+
   position: relative;
   background-image: url('/bg0.png');
   background-size: 400px 400px;
@@ -918,7 +918,8 @@ input:focus {
   transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
 }
 
-.ProseMirror blockquote.format:before, blockquote.format:after {
+.ProseMirror blockquote.format:before,
+blockquote.format:after {
   display: none;
 }
 
@@ -927,7 +928,7 @@ input:focus {
 }
 
 #toc-title {
-  color:#9fb1a3;
+  color: #9fb1a3;
   font-style: italic;
   font-size: 18px;
   min-height: 40px;
@@ -1001,7 +1002,7 @@ input:focus {
   color: #233231;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -1060,7 +1061,7 @@ input:focus {
   padding: 10px;
   border-radius: 6px;
   box-shadow: none;
-  border:none;
+  border: none;
   cursor: pointer;
 }
 
@@ -1071,13 +1072,19 @@ input:focus {
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 
 /* Next & previous buttons */
-.image-prev, .image-next {
+.image-prev,
+.image-next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1096,7 +1103,7 @@ input:focus {
   cursor: pointer;
   position: absolute;
   top: 0;
-  right:0;
+  right: 0;
   width: auto;
   padding: 16px;
   color: white;
@@ -1116,8 +1123,9 @@ input:focus {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.image-prev:hover, .image-next:hover {
-  background-color: rgba(0,0,0,0.8);
+.image-prev:hover,
+.image-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .image-description {
@@ -1128,22 +1136,22 @@ input:focus {
   padding: 10px;
 }
 
-.image-description:empty:not(:focus):before{
-  content:attr(data-ph);
-  color:#9fb1a3;
-  font-style:italic;
+.image-description:empty:not(:focus):before {
+  content: attr(data-ph);
+  color: #9fb1a3;
+  font-style: italic;
 }
 
 #resize-bar {
-  width:4px;
+  width: 4px;
   background-color: brown;
-  cursor:ew-resize;
+  cursor: ew-resize;
   background-color: transparent;
 }
 
 #sidebar-container {
-  height:100%;
-  position:relative;
+  height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

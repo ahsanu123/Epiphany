@@ -1,10 +1,10 @@
-import { EditorState, Plugin, Selection } from "prosemirror-state"
-import { EditorView, Decoration, DecorationSet } from "prosemirror-view"
+import { Plugin } from "prosemirror-state"
+import { Decoration, DecorationSet } from "prosemirror-view"
 import 'prosemirror-view/style/prosemirror.css'
 import 'prosemirror-menu/style/menu.css'
 import 'prosemirror-gapcursor/style/gapcursor.css'
 import './style.css'
-import { baseKeymap, setBlockType } from "prosemirror-commands"
+import { setBlockType } from "prosemirror-commands"
 
 import textSchema from "./textschema"
 

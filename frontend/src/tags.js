@@ -1,7 +1,5 @@
 import textSchema from "./textschema";
-import { Transform, StepMap } from "prosemirror-transform"
-import { TextSelection, Selection } from "prosemirror-state"
-import { inputRules } from "prosemirror-inputrules";
+import { Selection } from "prosemirror-state"
 
 
 export default class TagsView {

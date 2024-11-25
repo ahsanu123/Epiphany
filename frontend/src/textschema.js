@@ -1,4 +1,4 @@
-import { Schema, DOMParser } from "prosemirror-model"
+import { Schema } from "prosemirror-model"
 import { addListNodes } from "prosemirror-schema-list"
 import { createId } from '@paralleldrive/cuid2';
 
@@ -81,7 +81,7 @@ let nodes = {
     toDOM(node) {
       return [{ tag: "equation" }, 0]
     },
-    parseDOM: [{ tag: "equation",getAttrs(dom) { return { id: dom.id } } }]
+    parseDOM: [{ tag: "equation", getAttrs(dom) { return { id: dom.id } } }]
   },
   inline_equation: {
     atom: true,
@@ -106,7 +106,7 @@ let nodes = {
     parseDOM: [{ tag: "equation_ref", getAttrs(dom) { return { id: dom.id } } }]
   },
   heading: {
-    attrs: { level: { default: 1 }, id: {default: createId()} },
+    attrs: { level: { default: 1 }, id: { default: createId() } },
     content: "text*",
     group: "block",
     defining: true,
@@ -145,14 +145,14 @@ let nodes = {
     toDOM() { return ["blockquote", 0]; }
   },
   code_block: {
-    attrs: { lang: {default: 'javascript'} },
+    attrs: { lang: { default: 'javascript' } },
     content: "text*",
     marks: "",
     group: "block",
     code: true,
     defining: true,
     isolating: true,
-    parseDOM: [{ tag: "pre", preserveWhitespace: "full" , getAttrs(dom) { return { lang: dom.lang } } }],
+    parseDOM: [{ tag: "pre", preserveWhitespace: "full", getAttrs(dom) { return { lang: dom.lang } } }],
     toDOM() { return ["pre", ["code", 0]]; }
   },
   doc: {
